@@ -4,7 +4,7 @@
 **Project:** MindSweeper  
 **Developer:** Ian Vanderkley  
 **Project Phase:** Phase 1 — Architecture Planning  
-**Target Platform:** Android  
+**Target Platforms:** Android and iOS  
 **Status:** Proposed Architecture
 
 ## 1. Project Overview
@@ -18,7 +18,7 @@ The application will provide two main game modes:
 
 MindSweeper will also include an AI coaching system that provides post-game feedback, answers gameplay questions, and offers progressive hints during Practice Mode.
 
-This is an independently developed CPRG303 project. The application will be free to use, contain no advertisements or in-app purchases, and will not be published to an application marketplace as part of the course.
+This is an independently developed CPRG303 project targeting both Android and iOS. Android compatibility is required for the course, and the same React Native codebase will support iOS. The application will be free to use, contain no advertisements or in-app purchases, and will not be published to an application marketplace as part of the course.
 
 ### Primary User Story
 
@@ -42,7 +42,7 @@ The game engine will operate independently of Supabase and the AI service. This 
 
 | Component | Planned Technology | Purpose |
 |---|---|---|
-| Mobile framework | React Native with Expo | Android application development |
+| Mobile framework | React Native with Expo | Android and iOS application development |
 | Programming language | TypeScript | Application and game logic |
 | Navigation | Expo Router | Tab and stack navigation |
 | UI styling | React Native StyleSheet | Component styling |
@@ -75,7 +75,7 @@ The bottom navigation bar will be hidden during gameplay to maximize available s
 
 Guests will be able to access offline Practice Mode and local statistics. Ranked Mode and AI coaching will require authentication. The Master leaderboard will be publicly viewable.
 
-### Android Controls
+### Mobile Controls and Device Integration
 
 Players will be able to choose between two control schemes:
 
@@ -88,7 +88,7 @@ The board will support pinch-to-zoom, dedicated zoom controls, and panning. Thes
 
 Settings will include separate toggles for sound effects and haptic feedback.
 
-The application will use Android touchscreen input, network connectivity, app lifecycle detection, and optional audio and vibration. GPS, camera access, and fingerprint authentication are not required.
+On both Android and iOS, the application will use touchscreen input, network connectivity, app lifecycle detection, and optional audio and haptic feedback. GPS, camera access, and biometric authentication are not required. Platform-specific behaviour will be handled where necessary without changing the game rules.
 
 ## 5. Game Engine and Gameplay
 
@@ -321,12 +321,12 @@ AI outages, request failures, or exhausted allowances will not interrupt Practic
 
 ## 10. Testing and Reliability
 
-MindSweeper will use automated tests for game logic and ranking calculations, along with manual Android testing for device behaviour and online integration.
+MindSweeper will use automated tests for shared game logic and ranking calculations, along with manual Android and iOS testing for device behaviour and online integration.
 
 | Test Area | Acceptance Criteria |
 |---|---|
 | Game engine | Correct mine placement, first-click protection, flagging, chording, and win/loss detection |
-| Android controls | Accurate touch gestures, chording controls, zoom, and panning |
+| Mobile controls | Accurate touch gestures, chording controls, zoom, and panning on Android and iOS |
 | Offline Practice | Full gameplay without internet and successful recovery of unfinished games |
 | Statistics | Correct lifetime totals and win rates after detailed history pruning |
 | Synchronization | Successful uploads without duplicates or lost pending records |
@@ -337,13 +337,13 @@ MindSweeper will use automated tests for game logic and ranking calculations, al
 
 The analysis engine will be tested using known board situations, with a longer-term target of 50–100 verified scenarios covering both straightforward and complex deductions.
 
-Testing will be performed on an Android emulator and, where available, a physical Android device.
+Testing will use an Android emulator and an Android device where available, along with an iOS simulator or physical iPhone. Device testing will focus on touch controls, scaling, haptics, app backgrounding, and authentication.
 
 ## 11. Development Scope and Priorities
 
 MindSweeper will use a staged development approach, with complete gameplay prioritized over advanced online features.
 
-### Initial MVP — Phase 4 Priorities
+### Initial MVP — Phase 3 Development Priorities
 
 **Priority 1: Gameplay and Offline Practice**
 
@@ -379,7 +379,7 @@ These features may be staged beyond the initial course release if implementation
 
 Future enhancements may also include full move-by-move replay, stronger anti-cheat, achievements, and cooperative multiplayer.
 
-The priority is to deliver a stable Android application with complete offline Minesweeper gameplay, functioning player progression, and an initial AI coaching experience.
+The priority is to deliver a stable Android and iOS application with complete offline Minesweeper gameplay, functioning player progression, and an initial AI coaching experience. Phase 4 is reserved for reflection and peer assessment, and Phase 5 is the final demo and presentation.
 
 ## 12. Architecture Maintenance
 
