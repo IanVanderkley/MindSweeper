@@ -1,0 +1,1 @@
+I used AI to help create the initial mockups, but I went through most of the files individually and requested changes to get them closer to what I wanted. Some screens needed multiple changes before I was happy with the final design.

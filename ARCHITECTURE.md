@@ -3,8 +3,8 @@
 **Course:** CPRG303, Mobile Application Development  
 **Developer:** Ian Vanderkley  
 **Project:** MindSweeper  
-**Platforms:** Android and iOS  
-**Stage:** Phase 1 planning
+**Platforms:** Android (required) and iOS (also planned)  
+**Stage:** Phase 1 architecture, updated during Phase 2
 
 ## 1. Project Overview
 
@@ -58,10 +58,10 @@ The app will have five main tabs:
 | Play | Practice and Ranked Mode, difficulty selection, and starting a game |
 | Statistics | Win rates, game history, best times, and board reviews |
 | Coaching | AI chat and post-game feedback |
-| Leaderboard | Rankings for Master players |
+| Leaderboard | Public Master rankings and a placed player's own global position |
 | Profile | Account details, current rank, and Settings |
 
-Expo Router will handle the tabs and separate screens for gameplay, results, sign-in, and Settings. I'll hide the bottom tabs during a game to give the board more room. Guests can play Practice Mode and view local statistics, but will need to sign in for Ranked Mode or coaching. Anyone can view the Master leaderboard.
+Expo Router will handle the tabs and separate screens for gameplay, results, sign-in, and Settings. I'll hide the bottom tabs during a game to give the board more room. Guests can play Practice Mode and view local statistics, but will need to sign in for Ranked Mode or coaching. Anyone can view the Master leaderboard. After their placements, signed-in players can also see their own global position, even if they are below Master.
 
 ### Game controls
 
@@ -81,7 +81,7 @@ I'll keep the game engine in its own TypeScript files instead of putting all the
 |---|---|---:|
 | Beginner | 9 x 9 | 10 |
 | Intermediate | 16 x 16 | 40 |
-| Expert | 30 x 16 | 99 |
+| Expert | 16 x 30 | 99 |
 
 Practice Mode will offer all three difficulties. Ranked Mode will only use Intermediate.
 
@@ -98,7 +98,7 @@ At the end of a game, players will see whether they won or lost, their time, dif
 
 ## 6. Offline Practice, History, and Cloud Saves
 
-Practice Mode will always work without an account or internet connection. Players can pause manually, and the game will pause automatically when the app goes into the background. The board will be hidden while paused.
+Practice Mode will always work without an account or internet connection. Players can pause manually, and the game will pause automatically when the app goes into the background. **The board will stay visible while Practice is paused**, but the timer will stop and players won't be able to reveal or flag squares until they resume. If tapping the board can resume the game, that first tap won't also make a move.
 
 I'll use SQLite to save the current board and actions as the player goes, so an unfinished Practice game can be reopened after the app closes. Recovered games will open paused. AsyncStorage will hold settings such as the chosen control scheme, sound, and haptics.
 
@@ -112,7 +112,7 @@ Deleting older detailed records won't remove lifetime statistics. Games that hav
 
 When someone is signed in and online, completed Practice results will sync to Supabase. Each game will have its own ID, so retrying an upload won't create duplicates. The plan is to sync lifetime summaries and the latest 100 detailed records between devices, although full synchronization may be completed after the initial MVP.
 
-If someone plays as a guest and then signs in, the app will ask before adding those guest results to their account. Practice results won't affect Ranked Points (RP). Signed-in data and unsynced guest data will also be kept separate so one account can't accidentally receive another account's history.
+If someone plays as a guest and then signs in, the app will ask whether they want to keep and import their guest Practice history or discard it. Discarding that history will need a second confirmation. Practice results won't affect Ranked Points (RP). Signed-in data and unsynced guest data will also be kept separate so one account can't accidentally receive another account's history.
 
 ## 7. Accounts, Database, and Security
 
@@ -141,7 +141,7 @@ Ranked Mode will require an account and an internet connection. Every match will
 
 ### Placement matches and RP
 
-Players will start with 0 hidden RP and complete 10 placement games before their rank is shown. A placement win adds 40 RP and a loss removes 40 RP. After placements, wins and losses will change RP by 20. Negative RP is allowed, and game completion time won't change the points awarded.
+Players will start placements at **1,000 hidden RP** and complete 10 placement games before their first rank and RP are shown. A placement win adds 40 RP and a loss removes 40 RP. After placements, wins and losses will change RP by 20. Negative RP is allowed, and game completion time won't change the points awarded. The backend will check the match result before making the RP change final.
 
 | Rank | Division I | Division II | Division III |
 |---|---|---|---|
@@ -152,7 +152,7 @@ Players will start with 0 hidden RP and complete 10 placement games before their
 | Diamond | 1,200 to 1,299 | 1,300 to 1,399 | 1,400 to 1,499 |
 | Master | 1,500 RP and above | | |
 
-Division I is the lowest division within each rank. Bronze I also includes negative RP. Master has no divisions or upper limit, and only Master players appear on the leaderboard. Dropping below 1,500 RP removes Master status immediately.
+Division I is the lowest division within each rank. Bronze I also includes negative RP. Master has no divisions or upper limit, and only current Master players appear in the **public leaderboard list**. Players in lower ranks will still have a personal global position once they finish placements. Dropping below 1,500 RP removes Master status and public leaderboard eligibility immediately.
 
 ### Demotion protection
 
@@ -160,7 +160,7 @@ Protection will only apply when dropping out of a major rank below Master, not w
 
 ### Disconnects and unfinished games
 
-Players will only be allowed one unfinished Ranked game at a time. If the connection drops or the app goes into the background, the board will be hidden and the game timer will pause.
+Players will only be allowed one unfinished Ranked game at a time. If the connection drops or the app goes into the background, the board will be hidden and the game timer will pause. This is different from Practice Mode, where the board stays visible while paused.
 
 The longer-term recovery system will let players resume on the same device. Each match will have **24 hours of total paused time**, even if it is interrupted more than once. Resuming stops that allowance from being used but doesn't reset it. The backend will track session status and paused time using server timestamps. When the allowance runs out, the match will be forfeited and the appropriate RP deducted. Players can also choose to forfeit, with confirmation.
 
@@ -186,7 +186,7 @@ Post-game feedback can use game statistics and selected moves, but it will disti
 
 ### API access and limits
 
-The app will send AI requests through a Supabase Edge Function, with the OpenAI API key kept on the server. The backend will check the account, validate the request, and enforce a limit of **10 AI requests per account per UTC day**. Chat messages, post-game reviews, and generated hint sequences will all count toward the same limit. Failed requests that never return a usable response shouldn't use up the player's allowance.
+The app will send AI requests through a Supabase Edge Function, with the OpenAI API key kept on the server. The backend will check the account, validate the request, and enforce a limit of **10 AI requests per account per UTC day**, resetting at **00:00 UTC**. Chat messages, post-game reviews, and generated hint sequences will all count toward the same limit. Failed requests that never return a usable response shouldn't use up the player's allowance.
 
 If the AI service is unavailable or the player has used their requests, Practice Mode will still work normally. The first coaching release will focus on a working chatbot and basic post-game explanations. More advanced board analysis will be added only after it can be tested properly.
 
@@ -198,7 +198,7 @@ I'll use automated tests for the game engine and RP calculations, then test the 
 |---|---|
 | Game rules | Correct mine counts, safe first reveal, flagging, chording, and win/loss results |
 | Controls | Taps, holds, flag mode, chording, zoom, and panning without accidental reveals |
-| Offline Practice | Playing in airplane mode and restoring a saved game after closing the app |
+| Offline Practice | Playing in airplane mode, pausing with the board visible but inactive, and restoring a saved game after closing the app |
 | Statistics | Correct lifetime totals even after older detailed records are removed |
 | Cloud saves | Retrying uploads without duplicates or losing unsynced games |
 | Accounts | Sign-in, privacy rules, and preventing access to other players' records |
@@ -209,7 +209,7 @@ As the solver develops, I also want a set of known board situations with correct
 
 ## 11. Development Priorities
 
-My main goal is to finish a reliable Minesweeper game instead of getting halfway through too many features. The development milestone is **Phase 3**. Phase 4 is the reflection, and Phase 5 is the final demonstration.
+My main goal is to finish a reliable Minesweeper game instead of getting halfway through too many features. The project has four phases: Phase 1 planning, Phase 2 UI mockups and user flows, Phase 3 app development, and Phase 4 reflection and peer evaluation.
 
 | Priority | What I'm aiming to finish |
 |---|---|
@@ -219,7 +219,7 @@ My main goal is to finish a reliable Minesweeper game instead of getting halfway
 
 More complete cloud synchronization, Google Sign-In, automatic 24-hour Ranked recovery, three-level hints, and advanced solving are planned additions. Full replay, multiplayer, achievements, and stronger anti-cheat are future ideas rather than Phase 3 requirements.
 
-If time gets tight, I'll simplify or postpone advanced online and AI features before cutting core gameplay. Any postponed features will be clearly identified in the final presentation.
+If time gets tight, I'll simplify or postpone advanced online and AI features before cutting core gameplay. I'll clearly explain anything I had to postpone in my final reflection or demonstration.
 
 ## 12. Main Architecture Decisions
 
@@ -255,7 +255,7 @@ I chose Supabase Auth instead of building a password system myself. It also give
 
 ### 12.8 Fixed RP and backend-controlled rankings
 
-I chose fixed RP changes instead of ranking players by completion speed because the system will be easier to understand and test. Points will be processed through the backend rather than calculated and saved only on the phone. That protects the ranking table from direct edits, but it doesn't fully prevent cheating in a client-side game.
+I chose fixed RP changes instead of ranking players by completion speed because the system will be easier to understand and test. New players start with 1,000 hidden RP during placements, and points will be processed through the backend rather than calculated and saved only on the phone. That protects the ranking table from direct edits, but it doesn't fully prevent cheating in a client-side game.
 
 ### 12.9 Rank protection and match recovery
 
