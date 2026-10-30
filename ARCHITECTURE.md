@@ -3,7 +3,7 @@
 **Course:** CPRG303, Mobile Application Development  
 **Developer:** Ian Vanderkley  
 **Project:** MindSweeper  
-**Platforms:** Android (required) and iOS (also planned)  
+**Platforms:** Android and iOS 
 **Stage:** Phase 1 architecture, updated during Phase 2
 
 ## 1. Project Overview
