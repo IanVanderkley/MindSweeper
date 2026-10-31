@@ -28,7 +28,7 @@ Each screen covers its purpose, information, player actions, controls, navigatio
 - **Purpose:** Let the player complete a Minesweeper game without an account or internet.
 - **Information shown:** Board, timer, mine/flag counter, and active gameplay state.
 - **Player actions/input:** Reveal a square, place or remove a flag, chord when allowed, zoom, pan, or pause.
-- **Primary controls:** Tappable board, long-press flagging or Flag Mode, optional Chord button or number-tap chording, zoom buttons and pinch/pan gestures, Pause control.
+- **Primary controls:** Interactive game board, long-press flagging or Flag Mode, optional Chord button or number-tap chording, zoom buttons and pinch/pan gestures, and Pause control.
 - **Navigation:** Opens from Play or Resume; goes to paused state when paused and to Victory or Game Over when finished.
 - **States and feedback:** First revealed square opens a safe area. Valid moves update the board and counters. A win or mine reveal ends gameplay; starting over must not silently discard an unfinished game.
 
@@ -420,7 +420,7 @@ Each screen covers its purpose, information, player actions, controls, navigatio
 
 - **Five tabs:** Play, Statistics, Coaching, Leaderboard, and Profile provide main navigation. Settings is opened through Profile, not as a sixth tab.
 - **Full-screen gameplay:** Gameplay hides the bottom tabs to give the board more room. Game results, account pages, history details, and settings use stack navigation where appropriate.
-- **Practice and Ranked pauses differ:** A paused Practice board remains visible and inactive; a paused or backgrounded Ranked board is hidden.
+- **Practice and Ranked pauses differ:** A paused Practice board remains visible but cannot be played. In Ranked Mode, the board is hidden when the game is paused or the player switches to another app.
 - **Access rules:** Practice and local Practice statistics remain available to guests. Ranked and Coaching require sign-in and internet. The public Master leaderboard is viewable without an account.
 - **Confirmation for destructive actions:** Replacing an unfinished Practice game, discarding guest history, and deleting an account require clear choices before data is lost.
 - **Ranked gameplay state:** Active Ranked matches use the full-screen Minesweeper gameplay interface with Intermediate difficulty. The Ranked-specific state adds authenticated session handling, result checking, hidden board on interruption, and a cumulative 24-hour paused-time allowance.
