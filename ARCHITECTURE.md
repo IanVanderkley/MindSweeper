@@ -276,3 +276,11 @@ I could try to develop the full Ranked and AI systems from the start, but that w
 ## 13. Keeping This Document Updated
 
 These are my plans at the start of development. If a technology, feature, or deadline changes during implementation, I'll update this document and record the work through GitHub Issues and my Kanban board.
+
+## 14. Design Files and Development Workflow
+
+I'm developing MindSweeper on my own, so I'll use GitHub to organize my design files and track development progress. All 36 screen mockups are stored in `design/mockups/`, while the app logo and rank emblems are stored in `design/assets/branding/`. The user flows, interface scope, and design standards are located in `docs/phase-2/`.
+
+I'll use my [GitHub Kanban board](https://github.com/users/IanVanderkley/projects/1) to track development tasks through Backlog, Ready, In Progress, In Review, and Done. Each relevant Phase 3 ticket will include links to its mockups, user flows, and interface requirements so I can refer to them while building the application.
+
+If I make changes to a screen or feature during development, I'll update the relevant design documents and record the changes in the corresponding GitHub Issue. I'll also review completed work against the designs before marking a task as Done.
