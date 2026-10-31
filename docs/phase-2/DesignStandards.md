@@ -111,6 +111,6 @@ The app will communicate changes using the same visual rules across screens:
 
 ## 7. Keeping the Design Consistent
 
-The [36 screen mockups](../../design/mockups/) are the visual reference for implementation. When screens are built in React Native, shared colours, text styles, spacing, buttons, and cards will be defined in reusable styles.
+The [37 screen mockups](../../design/mockups/) are the visual reference for implementation. When screens are built in React Native, shared colours, text styles, spacing, buttons, and cards will be defined in reusable styles.
 
 Any changes to the default design will be reflected in these standards so new screens remain consistent with the rest of MindSweeper.

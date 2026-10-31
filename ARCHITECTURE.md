@@ -279,7 +279,7 @@ These are my plans at the start of development. If a technology, feature, or dea
 
 ## 14. Design Files and Development Workflow
 
-I'm developing MindSweeper on my own, so I'll use GitHub to organize my design files and track development progress. All 36 screen mockups are stored in `design/mockups/`, while the app logo and rank emblems are stored in `design/assets/branding/`. The user flows, interface scope, and design standards are located in `docs/phase-2/`.
+I'm developing MindSweeper on my own, so I'll use GitHub to organize my design files and track development progress. All 37 screen mockups are stored in `design/mockups/`, while the app logo and rank emblems are stored in `design/assets/branding/`. The user flows, interface scope, and design standards are located in `docs/phase-2/`.
 
 I'll use my [GitHub Kanban board](https://github.com/users/IanVanderkley/projects/1) to track development tasks through Backlog, Ready, In Progress, In Review, and Done. Each relevant Phase 3 ticket will include links to its mockups, user flows, and interface requirements so I can refer to them while building the application.
 

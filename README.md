@@ -7,7 +7,7 @@ MindSweeper is a mobile Minesweeper application I'm developing for CPRG303 at SA
 - [User Flows](docs/phase-2/UserFlows.md) — User stories, navigation, and flow diagrams.
 - [Interface Scope](docs/phase-2/InterfaceScope.md) — Requirements and controls for each planned screen.
 - [Design Standards](docs/phase-2/DesignStandards.md) — Colours, typography, icons, and layout standards.
-- [UI Mockups](design/mockups/) — All 36 screen mockups.
+- [UI Mockups](design/mockups/) — All 37 screen mockups.
 - [Branding Assets](design/assets/branding/) — App logo and rank emblems.
 
 ## Project Documentation

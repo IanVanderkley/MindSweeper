@@ -394,6 +394,17 @@ Each screen covers its purpose, information, player actions, controls, navigatio
 - **Navigation:** Opened from Profile; other pages use stack navigation. Guests can access general settings, while account-only actions require sign-in.
 - **States and feedback:** Current selections are visible and changes are saved automatically. Gameplay uses the selected control settings.
 
+### Coaching Preferences (`coaching-preferences.svg`)
+
+**Supports user flow(s):** 8
+
+- **Purpose:** Let signed-in players choose how the AI Coach explains Minesweeper.
+- **Information shown:** Hint level, explanation length, and board example preferences.
+- **Player actions/input:** Choose Nudge, Explain, or Answer; select Brief, Standard, or Detailed explanations; toggle board examples.
+- **Primary controls:** Hint level selection, explanation length selection, board example switch, and Back.
+- **Navigation:** Opens from Settings and returns there.
+- **States and feedback:** Selected preferences are saved automatically. These settings do not enable live hints in Ranked Mode.
+
 ### Colour Customization (`colour-customization.svg`)
 
 **Supports user flow(s):** 8

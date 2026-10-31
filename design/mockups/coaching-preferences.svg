@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" role="img" aria-label="MindSweeper Coaching Preferences mobile screen mockup">
+  <rect x="0" y="0" width="390" height="844" fill="#0D0D0D"/>
+<text x="22" y="27" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">9:41</text>
+<rect x="315" y="23" width="4" height="5" fill="#F5F5F5" rx="1"/>
+<rect x="322" y="20" width="4" height="8" fill="#F5F5F5" rx="1"/>
+<rect x="329" y="17" width="4" height="11" fill="#F5F5F5" rx="1"/>
+<rect x="336" y="14" width="4" height="14" fill="#F5F5F5" rx="1"/>
+<rect x="345" y="15" width="21" height="12" fill="none" rx="2" stroke="#F5F5F5" stroke-width="1.2"/>
+<rect x="348" y="18" width="14" height="6" fill="#F5F5F5" rx="1"/>
+<rect x="367" y="19" width="3" height="5" fill="#F5F5F5" rx="1"/>
+<path d="M33 51 L25 59 L33 67" fill="none" stroke="#F5F5F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<text x="49" y="70" fill="#F5F5F5" font-family="Roboto Condensed, Liberation Sans Narrow, Arial, sans-serif" font-size="26" font-weight="700" text-anchor="start">Coaching Preferences</text>
+<text x="22" y="98" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Choose how the Coach explains moves</text>
+<rect x="20" y="121" width="350" height="270" fill="#171717" rx="12" stroke="#2B2B2B" stroke-width="1"/>
+<text x="36" y="151" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">Hint Level</text>
+<text x="36" y="174" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Choose how much guidance to receive.</text>
+<rect x="32" y="188" width="326" height="59" fill="#1F1F1F" rx="9" stroke="#2B2B2B" stroke-width="1"/>
+<text x="48" y="212" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Nudge</text>
+<text x="48" y="232" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">A small clue without giving away the move.</text>
+<circle cx="333" cy="217" r="9" fill="none" stroke="#909090" stroke-width="2"/>
+<rect x="32" y="253" width="326" height="59" fill="#3D2327" rx="9" stroke="#E83B45" stroke-width="1"/>
+<text x="48" y="277" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Explain</text>
+<text x="48" y="297" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Walk through the logic step by step.</text>
+<circle cx="333" cy="282" r="9" fill="none" stroke="#E83B45" stroke-width="2"/>
+<circle cx="333" cy="282" r="4" fill="#E83B45"/>
+<rect x="32" y="318" width="326" height="59" fill="#1F1F1F" rx="9" stroke="#2B2B2B" stroke-width="1"/>
+<text x="48" y="342" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="start">Answer</text>
+<text x="48" y="362" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Show a move only when it can be proven.</text>
+<circle cx="333" cy="347" r="9" fill="none" stroke="#909090" stroke-width="2"/>
+<rect x="20" y="407" width="350" height="143" fill="#171717" rx="12" stroke="#2B2B2B" stroke-width="1"/>
+<text x="36" y="437" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">Explanation Length</text>
+<text x="36" y="457" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Set the amount of detail in coaching replies.</text>
+<rect x="35" y="476" width="101" height="49" fill="#252525" rx="8" stroke="#2B2B2B" stroke-width="1"/>
+<text x="85.5" y="506" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Brief</text>
+<rect x="142" y="476" width="101" height="49" fill="#3D2327" rx="8" stroke="#E83B45" stroke-width="1"/>
+<text x="192.5" y="506" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Standard</text>
+<rect x="249" y="476" width="101" height="49" fill="#252525" rx="8" stroke="#2B2B2B" stroke-width="1"/>
+<text x="299.5" y="506" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Detailed</text>
+<rect x="20" y="566" width="350" height="111" fill="#171717" rx="12" stroke="#2B2B2B" stroke-width="1"/>
+<text x="36" y="599" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="15" font-weight="700" text-anchor="start">Include Board Examples</text>
+<text x="36" y="622" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Show small diagrams when they help explain</text>
+<text x="36" y="637" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">a Minesweeper pattern or deduction.</text>
+<rect x="311" y="586" width="42" height="24" fill="#E83B45" rx="12"/>
+<circle cx="341" cy="598" r="9" fill="#F5F5F5"/>
+<rect x="20" y="691" width="350" height="58" fill="#202020" rx="9" stroke="#2B2B2B" stroke-width="1"/>
+<text x="36" y="714" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Applies to Practice coaching only.</text>
+<text x="36" y="731" fill="#B1B1B1" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Live hints are never available in Ranked Mode.</text>
+<rect x="20" y="764" width="350" height="52" fill="#C92E38" rx="9"/>
+<text x="195" y="797" fill="#F5F5F5" font-family="Roboto, Liberation Sans, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Back to Settings</text>
+</svg>

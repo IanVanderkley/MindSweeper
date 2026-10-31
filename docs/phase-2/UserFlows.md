@@ -144,6 +144,8 @@ The Gameplay section will offer long-press flagging or Flag Mode, along with cho
 
 The Colour Customization screen will let players change the colours of numbers, flags, mines, covered and revealed squares, backgrounds, borders, and buttons. A small board preview will show the selected colours, and Reset to Defaults will restore the original colours. The Ranked Notifications screen will include a reminder option for when a paused Ranked game's time allowance is almost used up.
 
+The Coaching Preferences screen will allow signed-in players to choose their preferred hint level, explanation length, and whether to include board examples.
+
 **Navigation used:** Profile tab → Settings in a stack → Colour Customization, Ranked Notifications, or Account Settings → Back.
 
 ## Flow 9 — Update account details or delete an account
