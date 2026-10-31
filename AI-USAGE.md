@@ -1,1 +1,7 @@
-I used AI to help create the initial mockups, but I went through most of the files individually and requested changes to get them closer to what I wanted. Some screens needed multiple changes before I was happy with the final design.
+# AI Usage
+
+I used AI to help create and refine the UI mockups and branding assets for MindSweeper. I provided the application requirements and design preferences, then reviewed the generated files and requested changes until they matched what I wanted.
+
+I used AI to help  improve parts of my Phase 2 documentation, including formatting design standards and improving wording.
+
+The prompts used during the design process are saved in `docs/aiPrompts/` for reference.

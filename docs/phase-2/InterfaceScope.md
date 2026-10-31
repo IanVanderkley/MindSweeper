@@ -355,8 +355,8 @@ Each screen covers its purpose, information, player actions, controls, navigatio
 - **Purpose:** Give a signed-in player a place to manage account details and security actions.
 - **Information shown:** Account information, security options, username editing, Sign Out, and Delete Account.
 - **Player actions/input:** Choose an account action or return to Settings.
-- **Primary controls:** Edit Username, Sign Out, Delete Account, and Back entries.
-- **Navigation:** Edit Username and Delete Account open in a stack; Sign Out returns to Guest Profile.
+- **Primary controls:** Edit Username, Password & Security, Sign Out, Delete Account, and Back entries.
+- **Navigation:** Edit Username and Delete Account open in a stack. Password & Security provides access to the existing password reset flow. Sign Out returns to Guest Profile.
 - **States and feedback:** Delete Account is not a direct action on the main Profile. Account-only actions require a signed-in state.
 
 ### Edit Username (`edit-username.svg`)

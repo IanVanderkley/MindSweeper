@@ -8,7 +8,7 @@ MindSweeper uses a dark interface with red accents. The game board remains the m
 
 ## 1. Typography
 
-MindSweeper uses Roboto Condensed for prominent headings and Roboto for regular interface text. This keeps titles recognizable while making instructions, buttons, and game information easy to read. I really like the colours and fonts on YouTube a so I used it as a base when designing. 
+MindSweeper uses Roboto Condensed for prominent headings and Roboto for regular interface text. This keeps titles recognizable while making instructions, buttons, and game information easy to read. I used YouTube's colours and typography as inspiration for MindSweeper's design, adapting them to fit my application.
 
 | Text role | Font | Size | Weight | Where it is used |
 |---|---|---:|---:|---|
@@ -78,11 +78,11 @@ MindSweeper also has its own branding and rank artwork. These files will be reus
 - [Master emblem](../../design/assets/branding/master-emblem.svg)
 - [Gold II emblem](../../design/assets/branding/gold-ii-emblem.svg)
 
-I will use Ai to create all the ranks in the same design pattern. 
+I plan to use AI to create the remaining rank emblems in the same style as the existing designs 
 
 ## 5. Layout and Shared Components
 
-The mockups use a 390 × 844 phone layout (Iphone 14 layout because thats what I have) as a design reference. The finished app will adapt to different screen sizes rather than relying on those exact dimensions.
+The mockups use a 390 × 844 phone layout (based on the iPhone 14, which I use) as a design reference. The finished app will adapt to different screen sizes rather than relying on those exact dimensions.
 
 | Element | Standard |
 |---|---|
