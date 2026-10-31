@@ -14,7 +14,7 @@ I'm also planning AI coaching. Players will be able to ask Minesweeper questions
 
 The app will be free, with no ads or purchases, and won't be published to an app store for this course.
 
-**Main user story:** As a player, I want to play Minesweeper on my phone without needing internet access, so I can practise whenever I want.
+**Main user story:** As a player, I want to play Minesweeper on my phone without needing internet access, so I can practice whenever I want.
 
 ## 2. How the App Will Work
 
@@ -69,7 +69,7 @@ Players will be able to choose how they place flags. One option will be tapping 
 
 All boards will support pinch-to-zoom, zoom buttons, and panning. This matters most for Expert Mode because its 30-column board would be difficult to use if every square had to fit on the screen at once. I'll need to test the gestures carefully so dragging or zooming doesn't accidentally reveal a square.
 
-Sound effects and haptic feedback will be optional, with separate switches in Settings. Both platforms will use touch input, network detection, and app backgrounding events. The game doesn't need GPS, camera access, or biometric authentication.
+Sound effects and haptic feedback will be optional, with separate switches in Settings. Both platforms will use touch input, network detection, and app background events. The game doesn't need GPS, camera access, or biometric authentication.
 
 ## 5. Minesweeper Gameplay
 
@@ -243,7 +243,7 @@ A fixed board that always fits the phone screen would be simpler, but Expert squ
 
 ### 12.5 Local saves for Practice Mode
 
-I chose SQLite for games and AsyncStorage for settings because the main game needs to work offline. Saving everything in Supabase would be easier to manage in one place, but players couldn't practise without internet. Local storage also means I need to handle restoring unfinished games and syncing results later.
+I chose SQLite for games and AsyncStorage for settings because the main game needs to work offline. Saving everything in Supabase would be easier to manage in one place, but players couldn't practice without internet. Local storage also means I need to handle restoring unfinished games and syncing results later.
 
 ### 12.6 Keeping lifetime results without unlimited detail
 
